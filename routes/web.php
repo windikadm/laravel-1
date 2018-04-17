@@ -17,14 +17,12 @@ Route::get('/', function () {
 
 
 Route::prefix('article')->group(function () {
+
 	Route::get('/', 'ArticleController@index');
-	Route::post('/create', 'ArticleController@create');
+	Route::get('/create', 'ArticleController@create');
+	Route::get('/show/{id}', 'ArticleController@show');
 	Route::post('/create', 'ArticleController@insert');
-	Route::post('/hapus/{id}', 'ArticleController@hapus');
-
-			
-	// santri
-	
-
+	Route::get('/hapus/{id}', 'ArticleController@hapus');
+	Route::get('/edit/{id}', 'ArticleController@edit');
+	Route::post('/update', 'ArticleController@update');		
 });
-	
